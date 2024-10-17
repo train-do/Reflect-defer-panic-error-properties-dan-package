@@ -21,7 +21,10 @@ func CekAccounts(){
 	fmt.Printf("%+v\n", Arr)
 }
 func ValidasiNamaKosong(nama string) error{
-	return errors.New("pembagian dengan nol")
+	if nama == "" {
+		return errors.New("Nama Tidak Boleh Kosong")
+	}
+	return nil
 }
 func CreateNewAccount(nama string, address string, saldo float32) Account{
 	errorValidasi := ValidasiNamaKosong(nama)
